@@ -21,7 +21,7 @@ namespace OGOO_CODE
         {
             MarsRover m = new MarsRover();
             // Type your length of space
-            Console.WriteLine("Enter xpath: like 5 5 or 10 10");
+            Console.WriteLine("Enter space: like 5 5 or 10 10");
             int[,] space;
             while (true)
             {
@@ -31,7 +31,7 @@ namespace OGOO_CODE
                 {
                     Console.WriteLine("Boşluk bırakarak giriniz");
                     continue;
-                }
+                } 
                 string[] array = xpath.Split(" ");
                 int number = 0;
                 bool t = int.TryParse(array[0], out number);
@@ -40,12 +40,13 @@ namespace OGOO_CODE
                 if (t.Equals(false) || t1.Equals(false))
                 {
                     Console.WriteLine("Tekrar giriniz");
+                    continue;
                 }
                 else
                 {
+                    space = new int[number, number2];
                     break;
                 }
-                space = new int[number, number2];
             }
             
             build = new Build();
